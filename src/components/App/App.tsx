@@ -18,8 +18,9 @@ class App extends Component<AppProps, AppState> {
 
     deleteMarkedHandler = (removeArray: Array<string>) => {
         let oldState: Array<any> = this.state.todoArray.slice();
-        oldState.forEach(item => {
-            let willRemove = removeArray.findIndex(elem => item === elem);
+
+        removeArray.forEach(elem => {
+            let willRemove = oldState.findIndex(item => item === elem);
             if (willRemove !== -1) {
                 oldState.splice(willRemove, 1);
             }

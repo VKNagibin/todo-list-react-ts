@@ -4,6 +4,7 @@ import './TodoListItem.css';
 type AppProps = {
     content: string;
     extraClass: string | null;
+    isChecked: boolean;
     id: string;
     handleDelete: (id: string) => void;
     handleEdit: (id: string, content: string) => void;
@@ -40,7 +41,7 @@ class TodoListItem extends Component<AppProps, AppState> {
     render() {
         return (
            <li className={`list-item ${this.props.extraClass}`}>
-               <input type="checkbox" onChange={this.checkboxHandler}/>
+               <input type="checkbox" checked={this.props.isChecked} onChange={this.checkboxHandler}/>
                <p className="todo">{this.props.content}</p>
                <div className="btn-group">
                    <button className="btn" onClick={this.editHandler}>edit</button>

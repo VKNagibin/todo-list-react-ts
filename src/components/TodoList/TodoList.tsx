@@ -7,6 +7,8 @@ type AppProps = {
     deleteHandler: (id: string) => void;
     editHandler: (id: string, newContent: string) => void;
     checkboxHandler: (bool: boolean, id: string) => void;
+    markAllBtnHandler: () => void;
+    deleteMarkedHandler: (removeArray: Array<string>) => void;
 }
 
 type AppState = {
@@ -15,12 +17,17 @@ type AppState = {
 
 class TodoList extends Component<AppProps, AppState> {
 
+    deleteMarkedHandler = () => {
+        let removeArray = this.props.todosArray.filter(item => item.checked === true);
+        this.props.deleteMarkedHandler(removeArray);
+    }
+
     markAllBtnHandler = (e:React.MouseEvent<HTMLButtonElement>) => {
-        alert("Yee, body!");
+        this.props.markAllBtnHandler();
     }
 
     handleCheckbox = (bool: boolean, id: string) => {
-
+        this.props.checkboxHandler(bool, id);
     }
 
     handleDelete = (id: string) => {
@@ -38,6 +45,7 @@ class TodoList extends Component<AppProps, AppState> {
             <ul className="todo-list" >
                 { this.props.todosArray.map((item) =>
                     <TodoListItem extraClass={item.checked ? "checked" : ''}
+                                  isChecked={item.checked}
                                   content={item.content}
                                   handleEdit={this.handleEdit}
                                   handleDelete={this.handleDelete}
@@ -47,6 +55,7 @@ class TodoList extends Component<AppProps, AppState> {
                     /> )}
 
                 <button onClick={this.markAllBtnHandler}>fulfil all</button>
+                <button onClick={this.deleteMarkedHandler}>delete marked</button>
             </ul>
         )
     }

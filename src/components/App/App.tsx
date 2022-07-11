@@ -10,10 +10,33 @@ type AppProps = {
 
 type AppState = {
     todoArray: Array<any>;
+    isMarked: boolean;
 }
 
 class App extends Component<AppProps, AppState> {
-    state: AppState = { todoArray: []}
+    state: AppState = { todoArray: [], isMarked: false}
+
+    deleteMarkedHandler = (removeArray: Array<string>) => {
+        let oldState: Array<any> = this.state.todoArray.slice();
+        oldState.forEach(item => {
+            let willRemove = removeArray.findIndex(elem => item === elem);
+            if (willRemove !== -1) {
+                oldState.splice(willRemove, 1);
+            }
+        })
+        this.setState({ todoArray: [...oldState] });
+    }
+
+    markAllBtnHandler = () => {
+        let oldState: Array<any> = this.state.todoArray.slice();
+        if (this.state.isMarked) {
+            oldState.map(item => item.checked = false);
+        } else {
+            oldState.map(item => item.checked = true);
+        }
+        let isMarked = this.state.isMarked;
+        this.setState({ todoArray: [...oldState], isMarked: !isMarked } );
+    }
 
     onTodoAdd = (inputValue: string) => {
         let oldState: Array<any> = this.state.todoArray.slice();
@@ -53,9 +76,13 @@ class App extends Component<AppProps, AppState> {
             <div className="app">
                 <CreateTodo onTodoAdd={ this.onTodoAdd }/>
                 <TodoList todosArray={ this.state.todoArray }
+                          markAllBtnHandler={this.markAllBtnHandler}
                           editHandler={this.editHandler}
                           deleteHandler={this.deleteHandler}
-                          checkboxHandler={this.checkboxHandler}/>
+                          checkboxHandler={this.checkboxHandler}
+                          deleteMarkedHandler={this.deleteMarkedHandler}
+                />
+
             </div>
         )
     }

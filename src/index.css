@@ -1,3 +1,5 @@
+@import "./assets/FuturaPTMedium.css";
+
 html {
     font-size: 25px;
 }
@@ -8,25 +10,6 @@ html {
     box-sizing: border-box;
     border: none;
     font-size: 1rem;
-}
-
-.checked p{
-    text-decoration: line-through;
-}
-
-.checked {
-    position: relative;
-    opacity: .3;
-}
-
-.btn {
-    padding: 5px 10px;
-    text-transform: uppercase;
-    transition: .3s transform;
-    cursor: pointer;
-}
-
-.btn:hover {
-    will-change: transform;
-    transform: scale(110%);
+    font-family: 'FuturaPTWebMedium';
+    border-radius: 5px;
 }

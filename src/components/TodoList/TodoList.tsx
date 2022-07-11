@@ -11,11 +11,7 @@ type AppProps = {
     deleteMarkedHandler: (removeArray: Array<string>) => void;
 }
 
-type AppState = {
-    message?: string;
-}
-
-class TodoList extends Component<AppProps, AppState> {
+class TodoList extends Component<AppProps, {}> {
 
     deleteMarkedHandler = () => {
         let removeArray = this.props.todosArray.filter(item => item.checked === true);

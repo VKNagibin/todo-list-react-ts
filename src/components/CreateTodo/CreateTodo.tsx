@@ -6,12 +6,8 @@ type AppProps = {
     onTodoAdd: (prop: string) => void;
 }
 
-type AppState = {
-    value: string;
-}
-
-class CreateTodo extends Component<AppProps, AppState> {
-    state: AppState = { value: ''};
+class CreateTodo extends Component<AppProps, {value: string}> {
+    state = { value: ''};
 
     onInputChange = (inputValue: string): void => {
         this.setState( { value: inputValue } )

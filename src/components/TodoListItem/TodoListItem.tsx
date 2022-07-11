@@ -11,15 +11,10 @@ type AppProps = {
     handleCheckbox: (bool: boolean, id: string) => void;
 }
 
-type AppState = {
-    count?: number;
-}
-
-class TodoListItem extends Component<AppProps, AppState> {
+class TodoListItem extends Component<AppProps, {}> {
     deleteHandler = () => {
         this.props.handleDelete(this.props.id);
     }
-
 
     editHandler = () => {
         let promptValue = prompt("Edit task");

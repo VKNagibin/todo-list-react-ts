@@ -4,16 +4,12 @@ import TodoList from "../TodoList/TodoList";
 import './App.css';
 import { nanoid } from 'nanoid'
 
-type AppProps = {
-    message?: string;
-}
-
 type AppState = {
     todoArray: Array<any>;
     isMarked: boolean;
 }
 
-class App extends Component<AppProps, AppState> {
+class App extends Component<{}, AppState> {
     state: AppState = { todoArray: [], isMarked: false}
 
     deleteMarkedHandler = (removeArray: Array<string>) => {

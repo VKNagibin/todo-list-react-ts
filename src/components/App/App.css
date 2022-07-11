@@ -1,8 +1,53 @@
 .app {
-    width: 100%;
+    width: 100vw;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: rgba(138, 134, 134, 0.29);
+}
+
+.checked p{
+    text-decoration: line-through;
+}
+
+.checked {
+    position: relative;
+    opacity: .3;
+}
+
+.btn {
+    will-change: transform;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    transition: .3s transform;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(110%);
+}
+
+ul {
+    animation-name: key;
+    animation-duration: .4s;
+    animation-timing-function: ease-in;
+}
+
+li {
+    animation-name: key;
+    animation-duration: .4s;
+    animation-timing-function: ease-in;
+}
+
+
+@keyframes key{
+    0% {
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }

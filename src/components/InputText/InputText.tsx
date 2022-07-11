@@ -7,11 +7,7 @@ type AppProps = {
     value: string;
 }
 
-type AppState = {
-    str?: string;
-}
-
-class InputText extends Component<AppProps, AppState> {
+class InputText extends Component<AppProps, {}> {
     handleInput = (e: React.FormEvent<HTMLInputElement>): void => {
         this.props.onInputChange(e.currentTarget.value);
     }

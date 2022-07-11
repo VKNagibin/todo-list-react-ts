@@ -1,0 +1,11 @@
+.create-todo-form {
+    padding: 20px;
+    width: 400px;
+    background-color: rgba(3, 53, 56, 0.32);
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+}
+

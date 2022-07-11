@@ -1,0 +1,11 @@
+.list-item {
+    width: 400px;
+    list-style: none;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-around;
+}
+.btn-group {
+    display: flex;
+    gap: 5px;
+}

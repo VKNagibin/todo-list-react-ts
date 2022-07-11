@@ -54,8 +54,8 @@ class TodoList extends Component<AppProps, AppState> {
                                   id={item.id}
                     /> )}
 
-                <button onClick={this.markAllBtnHandler}>fulfil all</button>
-                <button onClick={this.deleteMarkedHandler}>delete marked</button>
+                <button className="btn" onClick={this.markAllBtnHandler}>fulfil all</button>
+                <button className="btn" onClick={this.deleteMarkedHandler}>delete marked</button>
             </ul>
         )
     }

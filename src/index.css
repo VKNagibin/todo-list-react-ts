@@ -18,3 +18,15 @@ html {
     position: relative;
     opacity: .3;
 }
+
+.btn {
+    padding: 5px 10px;
+    text-transform: uppercase;
+    transition: .3s transform;
+    cursor: pointer;
+}
+
+.btn:hover {
+    will-change: transform;
+    transform: scale(110%);
+}

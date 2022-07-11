@@ -1,11 +1,23 @@
 .list-item {
-    width: 400px;
+    width: 800px;
     list-style: none;
+    padding: 10px 20px;
+    border: 2px solid rgba(80, 79, 79, 0.37);
     font-size: 1.2rem;
     display: flex;
-    justify-content: space-around;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-between;
 }
+
+.list-item p {
+    margin-right: auto;
+    width: 60%;
+    overflow-x: auto;
+    background-color: transparent;
+}
+
 .btn-group {
     display: flex;
-    gap: 5px;
+    gap: 10px;
 }

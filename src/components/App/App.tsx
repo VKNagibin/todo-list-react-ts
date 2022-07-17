@@ -25,14 +25,14 @@ class App extends Component<{}, AppState> {
     }
 
     markAllBtnHandler = () => {
-        let oldState: Array<any> = this.state.todoArray.slice();
-        if (this.state.isMarked) {
-            oldState.map(item => item.checked = false);
+        let prevArray = this.state.todoArray.slice();
+        let haveFalse = prevArray.findIndex(item => item.checked === false);
+        if (haveFalse !== -1) {
+            prevArray.forEach(item => item.checked = true);
         } else {
-            oldState.map(item => item.checked = true);
+            prevArray.forEach(item => item.checked = false);
         }
-        let isMarked = this.state.isMarked;
-        this.setState({ todoArray: [...oldState], isMarked: !isMarked } );
+        this.setState({ todoArray: [...prevArray] });
     }
 
     onTodoAdd = (inputValue: string) => {

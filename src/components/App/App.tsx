@@ -5,7 +5,11 @@ import './App.css';
 import { nanoid } from 'nanoid'
 
 type AppState = {
-    todoArray: Array<any>;
+    todoArray: {
+        content: string,
+        id: string,
+        checked: boolean;
+    }[];
     isMarked: boolean;
 }
 

@@ -26,11 +26,7 @@ class TodoListItem extends Component<AppProps, {}> {
     }
 
     checkboxHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if (e.target.checked) {
-            this.props.handleCheckbox(true, this.props.id);
-        } else {
-            this.props.handleCheckbox(false, this.props.id);
-        }
+        this.props.handleCheckbox(e.target.checked, this.props.id);
     }
 
     render() {

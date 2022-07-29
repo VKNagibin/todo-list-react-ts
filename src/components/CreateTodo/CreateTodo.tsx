@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import InputText from "../InputText/InputText";
+import InputText from "../../primitives/InputText/InputText";
 import './CreateTodo.css';
 
 type AppProps = {
